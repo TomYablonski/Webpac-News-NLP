@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Test</title>
+    </head>
+
+    <body>
+
+        <header>
+            <div class="">
+               <h1>Analysis of a web page</h1>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+				Please enter a valid News Web URL .... Example:https://foxnews.com
+                    <input id="name" type="text" name="input" value="" placeholder="URL">
+                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                </form>
+            <section>
+
+            <section id="resultSection" style="display: none;">
+                <h2><strong>API Results From Aylien API:</strong></h2>
+                <div id="results"></div>
+				</br>
+                <h3>Polarity</h3>
+                <p id="polarity"></p>
+				</br>
+                <h3>Polarity Confidence Score</h3>
+                <p id="polarity_confidence"></p>
+				</br>
+                <h3>Subjectivity</h3>
+                <p id="subjectivity"></p>
+				</br>
+                <h3>Subjectivity Confidence Score</h3>
+                <p id="subjectivity_confidence"></p>
+				</br>
+                <h3>Text</h3>
+                <p id="text"></p>
+            </section>
+        </main>
+
+        <footer>
+            <p>This is a footer</p>
+        </footer>
+       <script>
+            // Check that service workers are supported. Service workers allow offline access. 
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
+    </body>
+</html>
